@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function FooterCTA() {
   return (
-    <footer id="contact" className="py-32 bg-slate-950 text-white relative overflow-hidden border-t border-slate-900">
+    <footer id="contacto" className="py-32 bg-slate-950 text-white relative overflow-hidden border-t border-slate-900">
       <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10 text-center space-y-12">

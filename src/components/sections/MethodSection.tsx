@@ -24,7 +24,7 @@ export default function MethodSection() {
   const items = Array.from({ length: 24 });
 
   return (
-    <section ref={sectionRef} id="method" className="relative min-h-[250vh] bg-slate-950 text-white">
+    <section ref={sectionRef} id="metodo" className="relative min-h-[250vh] bg-slate-950 text-white">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
         
@@ -48,6 +48,8 @@ export default function MethodSection() {
               const row = Math.floor(i / cols);
               const col = i % cols;
               
+              // We use pre-calculated deterministic pseudo-random values to avoid hydration issues
+              // even if isMounted is true, keeping calculations consistent.
               const chaosX = (Math.sin(i * 123) * 60) + 50;
               const chaosY = (Math.cos(i * 456) * 60) + 50; 
               const chaosRotate = Math.sin(i) * 180;
@@ -56,7 +58,6 @@ export default function MethodSection() {
               const orderY = 15 + (row * (70 / (rows - 1)));
               const orderRotate = 0;
 
-              // t control: start reorganization at 0.1, finish at 0.8
               const t = Math.max(0, Math.min(1, (scrollProgress - 0.1) * 1.5));
               
               const currentX = chaosX + (orderX - chaosX) * t;
@@ -68,11 +69,11 @@ export default function MethodSection() {
                   key={i}
                   className="absolute w-8 h-8 md:w-16 md:h-16 border flex items-center justify-center transition-colors duration-500"
                   style={{
-                    left: `${currentX}%`,
-                    top: `${currentY}%`,
-                    transform: `translate(-50%, -50%) rotate(${currentRotate}deg)`,
+                    left: `${currentX.toFixed(4)}%`,
+                    top: `${currentY.toFixed(4)}%`,
+                    transform: `translate(-50%, -50%) rotate(${currentRotate.toFixed(3)}deg)`,
                     borderColor: t > 0.8 ? 'hsl(var(--primary))' : 'rgba(255,255,255,0.1)',
-                    backgroundColor: t > 0.8 ? 'rgba(var(--primary-rgb), 0.1)' : 'transparent',
+                    backgroundColor: t > 0.8 ? 'hsla(var(--primary), 0.1)' : 'transparent',
                   }}
                 >
                   <div className="text-[8px] font-mono opacity-20">{i.toString(16).padStart(2, '0')}</div>

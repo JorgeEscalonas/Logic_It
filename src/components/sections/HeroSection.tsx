@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function HeroSection() {
@@ -36,12 +36,16 @@ export default function HeroSection() {
             
             <div className="flex flex-col justify-end gap-6">
               <div className="flex gap-4">
-                <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group">
-                  Iniciar Proyecto 
-                  <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <Button asChild size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer">
+                  <Link href="#contacto">
+                    Iniciar Proyecto 
+                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10">
-                  Explorar
+                <Button asChild variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10 cursor-pointer">
+                  <Link href="#sistemas">
+                    Explorar
+                  </Link>
                 </Button>
               </div>
             </div>

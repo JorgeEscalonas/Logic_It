@@ -12,7 +12,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-32 bg-slate-950 text-white border-t border-white/5 overflow-hidden">
+    <section id="sistemas" className="py-32 bg-slate-950 text-white border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
           <div className="max-w-2xl space-y-6">

@@ -25,7 +25,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white relative overflow-hidden">
+    <section id="proceso" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
