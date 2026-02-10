@@ -2,62 +2,71 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background">
-      <div className="absolute inset-0 z-0 overflow-hidden grayscale opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />
-        <div className="flex w-[200%] h-full animate-slow-pan">
-          <Image
-            src="https://picsum.photos/seed/logic1/1920/1080"
-            alt="System visual loop"
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint="software dashboard"
-          />
-        </div>
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950 text-white">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 blueprint-grid opacity-20 mask-radial" />
+        <div className="absolute top-0 left-0 w-full h-full scanline opacity-20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/10 via-transparent to-transparent animate-pulse-slow" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-20">
-        <div className="max-w-4xl space-y-8 animate-fade-in">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-3 h-3 bg-primary" />
-            <span className="text-xs font-mono uppercase tracking-[0.3em]">Arquitectura Digital v2.5</span>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-5xl space-y-10">
+          <div className="inline-flex items-center gap-4 px-4 py-1.5 border border-primary/30 bg-primary/5 backdrop-blur-sm">
+            <div className="w-2 h-2 bg-primary animate-pulse" />
+            <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-primary-foreground/80">
+              Sistemas que escalan sin límites
+            </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-headline font-semibold leading-[1.1] tracking-tighter">
-            Diseñamos y desarrollamos <br />
-            <span className="text-foreground/80">sistemas digitales que funcionan.</span>
+          <h1 className="text-6xl md:text-[120px] font-headline font-black leading-[0.85] tracking-[-0.07em] uppercase">
+            Ingeniería <br />
+            <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>Digital</span> <br />
+            <span className="text-primary glow-text">Real.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed font-light">
-            Aplicaciones web, móviles, desktop y automatizaciones construidas con arquitectura, lógica y visión de largo plazo.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="h-14 px-10 text-base font-medium rounded-none bg-primary hover:bg-accent text-white transition-all">
-              DISEÑAR MI SISTEMA
-            </Button>
-            <div className="flex items-center gap-3 px-6 py-3 border border-border bg-white/50 backdrop-blur text-sm font-medium">
-              Sistemas reales. Software que escala.
+          <div className="grid md:grid-cols-2 gap-12 pt-8">
+            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
+              No creamos software común. Construimos arquitecturas robustas que transforman la lógica de negocio en activos digitales de alto rendimiento.
+            </p>
+            
+            <div className="flex flex-col justify-end gap-6">
+              <div className="flex gap-4">
+                <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group">
+                  Iniciar Proyecto 
+                  <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </Button>
+                <Button variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10">
+                  Explorar
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-6 right-6 flex justify-between items-end border-t border-border/50 pt-4 z-20">
-        <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-          Logicit © 2024 / Digital Architecture
-        </div>
-        <div className="hidden md:flex gap-12">
-          {["Vision", "Logic", "Scale"].map((word) => (
-            <div key={word} className="flex items-center gap-2">
-              <span className="text-[10px] text-primary font-bold">0{word.length}</span>
-              <span className="text-xs font-medium uppercase tracking-tighter">{word}</span>
+      {/* Technical Footer */}
+      <div className="absolute bottom-12 left-6 right-6 flex flex-col md:flex-row justify-between items-end gap-4 border-t border-white/10 pt-6">
+        <div className="flex gap-12">
+          {[
+            { label: "LATENCY", value: "<12ms" },
+            { label: "UPTIME", value: "99.99%" },
+            { label: "ARCHITECTURE", value: "Modular" }
+          ].map((stat) => (
+            <div key={stat.label} className="space-y-1">
+              <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">{stat.label}</p>
+              <p className="text-sm font-bold tracking-tighter">{stat.value}</p>
             </div>
           ))}
+        </div>
+        <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-4">
+          <span>Logicit Systems v24.5</span>
+          <div className="w-20 h-px bg-white/20" />
+          <span>Status: Stable</span>
         </div>
       </div>
     </section>

@@ -11,8 +11,6 @@ export default function MethodSection() {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
-      // Calculate progress (0 to 1) based on section position
       const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
       setScrollProgress(progress);
     };
@@ -21,40 +19,43 @@ export default function MethodSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Chaotic items initially spread, then move to a grid
-  const items = Array.from({ length: 16 });
+  const items = Array.from({ length: 24 });
 
   return (
-    <section ref={sectionRef} id="method" className="relative min-h-[200vh] bg-background">
+    <section ref={sectionRef} id="method" className="relative min-h-[250vh] bg-slate-950 text-white">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-6">
-        <div className="text-center mb-16 max-w-2xl z-20">
-          <h2 className="text-4xl md:text-5xl font-headline font-semibold tracking-tighter mb-6">
-            El problema no es la tecnología. <br />
-            <span className="text-primary italic">Es la falta de arquitectura.</span>
+        <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
+        
+        <div className="text-center mb-16 max-w-3xl z-20">
+          <div className="inline-block px-4 py-1 border border-primary text-primary text-[10px] font-mono uppercase tracking-[0.3em] mb-8">
+            Filosofía de Construcción
+          </div>
+          <h2 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none uppercase">
+            Orden <br /> 
+            <span className="text-primary italic">Desde el Caos</span>
           </h2>
         </div>
 
-        <div className="relative w-full max-w-4xl aspect-video border border-border bg-white p-8 overflow-hidden">
+        <div className="relative w-full max-w-6xl aspect-[21/9] border border-white/5 bg-slate-900/50 backdrop-blur-sm p-8 overflow-hidden">
           <div className="absolute inset-0 blueprint-grid-small opacity-10" />
           
           <div className="relative w-full h-full">
             {items.map((_, i) => {
-              const row = Math.floor(i / 4);
-              const col = i % 4;
+              const rows = 3;
+              const cols = 8;
+              const row = Math.floor(i / cols);
+              const col = i % cols;
               
-              // Chaos state (random-ish)
-              const chaosX = (Math.sin(i * 123) * 40) + 50; // 10% to 90%
-              const chaosY = (Math.cos(i * 456) * 40) + 50; 
-              const chaosRotate = Math.sin(i) * 45;
+              const chaosX = (Math.sin(i * 123) * 60) + 50;
+              const chaosY = (Math.cos(i * 456) * 60) + 50; 
+              const chaosRotate = Math.sin(i) * 180;
 
-              // Order state (grid)
-              const orderX = 12.5 + (col * 25);
-              const orderY = 12.5 + (row * 25);
+              const orderX = 10 + (col * (80 / (cols - 1)));
+              const orderY = 15 + (row * (70 / (rows - 1)));
               const orderRotate = 0;
 
-              // Linear interpolation based on scrollProgress
-              // We accelerate the transition in the middle of the scroll (0.3 to 0.7)
-              const t = Math.max(0, Math.min(1, (scrollProgress - 0.2) * 2));
+              // t control: start reorganization at 0.1, finish at 0.8
+              const t = Math.max(0, Math.min(1, (scrollProgress - 0.1) * 1.5));
               
               const currentX = chaosX + (orderX - chaosX) * t;
               const currentY = chaosY + (orderY - chaosY) * t;
@@ -63,33 +64,35 @@ export default function MethodSection() {
               return (
                 <div
                   key={i}
-                  className="absolute w-12 h-12 md:w-20 md:h-20 border border-border bg-background flex items-center justify-center shadow-sm"
+                  className="absolute w-8 h-8 md:w-16 md:h-16 border flex items-center justify-center transition-colors duration-500"
                   style={{
                     left: `${currentX}%`,
                     top: `${currentY}%`,
                     transform: `translate(-50%, -50%) rotate(${currentRotate}deg)`,
-                    borderColor: t > 0.8 ? 'hsl(var(--primary))' : 'hsl(var(--border))',
-                    transition: 'border-color 0.3s ease',
+                    borderColor: t > 0.8 ? 'hsl(var(--primary))' : 'rgba(255,255,255,0.1)',
+                    backgroundColor: t > 0.8 ? 'rgba(var(--primary-rgb), 0.1)' : 'transparent',
                   }}
                 >
-                  <div className={`w-1/2 h-1/2 border border-dotted ${t > 0.8 ? 'border-primary/50' : 'border-muted-foreground/30'}`} />
+                  <div className="text-[8px] font-mono opacity-20">{i.toString(16).padStart(2, '0')}</div>
+                  {t > 0.9 && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <div className="w-1 h-1 bg-primary rounded-full animate-ping" />
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
 
-          {/* Introduce the "Modular Bit" in the middle of transition */}
-          {scrollProgress > 0.4 && (
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none animate-fade-in">
-              <div className="px-6 py-2 bg-primary text-white font-mono text-xs uppercase tracking-[0.2em] shadow-xl">
-                Bit Modular Iniciado
-              </div>
-            </div>
-          )}
+          {/* Impact Text */}
+          <div className={`absolute bottom-8 left-8 transition-all duration-700 ${scrollProgress > 0.6 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className="text-4xl font-black uppercase italic tracking-tighter">Modularidad Extrema.</p>
+            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-2">Sistemas diseñados para la redundancia y el escalamiento horizontal.</p>
+          </div>
         </div>
 
-        <div className="mt-12 text-center opacity-50 font-mono text-[10px] uppercase tracking-widest">
-          Scroll para reorganizar sistema
+        <div className="mt-16 text-center opacity-30 font-mono text-[10px] uppercase tracking-[1em] animate-pulse">
+          Desciende para alinear el sistema
         </div>
       </div>
     </section>

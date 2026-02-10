@@ -1,75 +1,67 @@
 "use client";
 
-import { Separator } from "@/components/ui/separator";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function ServicesSection() {
   const services = [
-    "Aplicaciones Web",
-    "Aplicaciones Móviles",
-    "Software Desktop",
-    "Automatización de Procesos",
-    "Integraciones & Sistemas Internos",
+    { title: "Apps Web de Alto Tráfico", desc: "Sistemas distribuidos que procesan millones de peticiones." },
+    { title: "Ecosistemas Móviles", desc: "Experiencias nativas y fluidas centradas en el usuario." },
+    { title: "Automatización Core", desc: "Reducción de fricción mediante lógica de procesos pura." },
+    { title: "Arquitectura Cloud", desc: "Infraestructura que escala automáticamente con el negocio." },
   ];
 
   return (
-    <section id="services" className="relative grid md:grid-cols-2 min-h-screen border-t">
-      {/* Left Column: Text Content */}
-      <div className="p-8 md:p-24 flex flex-col justify-center space-y-12 bg-white">
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-headline font-semibold tracking-tighter">
-            No desarrollamos “apps”. <br />
-            <span className="text-primary">Construimos sistemas.</span>
-          </h2>
-          <div className="max-w-lg space-y-4">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Desarrollamos aplicaciones web, móviles y de escritorio, automatizaciones y plataformas internas que resuelven procesos reales de negocio.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Cada línea de código responde a una arquitectura clara. Cada sistema está pensado para crecer.
+    <section id="services" className="py-32 bg-slate-950 text-white border-t border-white/5 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
+          <div className="max-w-2xl space-y-6">
+            <h2 className="text-4xl md:text-7xl font-headline font-black uppercase tracking-tighter leading-none">
+              Nuestras <br />
+              <span className="text-primary italic">Especialidades</span>
+            </h2>
+          </div>
+          <div className="max-w-xs space-y-4">
+            <div className="w-12 h-1 bg-primary" />
+            <p className="text-slate-400 font-mono text-xs uppercase tracking-widest">
+              No somos una agencia creativa. Somos una consultora de ingeniería.
             </p>
           </div>
         </div>
 
-        <div className="space-y-4 pt-8">
+        <div className="grid lg:grid-cols-2 gap-px bg-white/10 border border-white/10">
           {services.map((service, i) => (
-            <div key={service} className="group flex items-center justify-between py-4 border-b border-border hover:border-primary transition-colors cursor-default">
-              <div className="flex items-center gap-6">
-                <span className="text-xs font-mono text-muted-foreground">0{i + 1}</span>
-                <span className="text-xl font-medium tracking-tight group-hover:text-primary transition-colors">{service}</span>
+            <div 
+              key={service.title} 
+              className="group p-12 bg-slate-950 hover:bg-primary transition-all duration-700 cursor-crosshair relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-8 text-6xl font-black text-white/5 group-hover:text-black/10 transition-colors">
+                0{i + 1}
               </div>
-              <div className="h-px w-0 group-hover:w-12 bg-primary transition-all duration-500" />
+              
+              <div className="relative z-10 space-y-6">
+                <h3 className="text-3xl font-bold tracking-tighter group-hover:text-black transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-slate-400 group-hover:text-black/80 transition-colors max-w-sm">
+                  {service.desc}
+                </p>
+                <div className="pt-8 flex items-center gap-4 group-hover:text-black">
+                   <span className="text-[10px] font-mono uppercase tracking-[0.3em]">Especificaciones Técnicas</span>
+                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
+                </div>
+              </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Right Column: Visual Showcase */}
-      <div className="relative h-[50vh] md:h-full bg-slate-900 overflow-hidden">
-        <div className="absolute inset-0 blueprint-grid opacity-20" />
-        <div className="absolute inset-0 flex items-center justify-center p-12">
-          <div className="relative w-full h-full border border-primary/30 bg-primary/5 backdrop-blur-sm p-4">
-             {/* Simulated system diagram animation container */}
-             <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 p-8 gap-4 opacity-40">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={i} className="border border-primary/50 bg-primary/10 rounded-sm animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
-                ))}
+        <div className="mt-24 grid md:grid-cols-3 gap-12 opacity-40">
+           {["Microservices", "Serverless", "Event-Driven"].map(tag => (
+             <div key={tag} className="flex items-center gap-4">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.5em]">{tag}</span>
              </div>
-             <Image 
-                src="https://picsum.photos/seed/logic3/1200/800"
-                alt="Architecture view"
-                fill
-                className="object-contain p-12 mix-blend-screen opacity-60"
-                data-ai-hint="system diagram"
-             />
-          </div>
-        </div>
-        
-        {/* Decorative architectural info overlay */}
-        <div className="absolute bottom-8 right-8 text-right font-mono text-[10px] text-primary/60 uppercase leading-relaxed">
-          System: Core.Logic.v4<br />
-          Status: Operational<br />
-          Scale: High_Throughput
+           ))}
         </div>
       </div>
     </section>
