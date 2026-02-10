@@ -5,8 +5,10 @@ import { useEffect, useRef, useState } from "react";
 export default function MethodSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
@@ -40,7 +42,7 @@ export default function MethodSection() {
           <div className="absolute inset-0 blueprint-grid-small opacity-10" />
           
           <div className="relative w-full h-full">
-            {items.map((_, i) => {
+            {isMounted && items.map((_, i) => {
               const rows = 3;
               const cols = 8;
               const row = Math.floor(i / cols);
