@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-dashboard",
+      "description": "Enterprise software dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1768293336571-c48f8765a82d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzb2Z0d2FyZSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NzA2NzgyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software dashboard"
+    },
+    {
+      "id": "mobile-app",
+      "description": "Professional mobile application UI",
+      "imageUrl": "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzcwNjU5MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "system-diagram",
+      "description": "Technical system architecture diagram",
+      "imageUrl": "https://images.unsplash.com/photo-1583929212081-b59975d37aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzeXN0ZW0lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcwNzMzOTY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "system architecture"
+    },
+    {
+      "id": "code-editor",
+      "description": "Clean code editor interface",
+      "imageUrl": "https://images.unsplash.com/photo-1724260793422-7754e5d06fbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzcwNzMzOTY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding interface"
+    }
+  ]
 }
