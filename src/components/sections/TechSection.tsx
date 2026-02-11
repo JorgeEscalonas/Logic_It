@@ -35,7 +35,7 @@ Content-Type: application/json
   };
 
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-24 bg-background text-white relative overflow-hidden">
       <div className="absolute inset-0 blueprint-grid opacity-5" />
       
       <div className="container mx-auto px-6 relative z-10">

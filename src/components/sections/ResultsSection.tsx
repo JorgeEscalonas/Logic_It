@@ -26,7 +26,7 @@ export default function ResultsSection() {
   ];
 
   return (
-    <section className="py-32 bg-slate-950 text-white border-y border-white/5">
+    <section className="py-32 bg-background text-white border-y border-white/5">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
           <div className="max-w-3xl space-y-6">
@@ -42,9 +42,9 @@ export default function ResultsSection() {
 
         <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 overflow-hidden">
           {results.map((result, i) => (
-            <div key={result.title} className="group relative bg-slate-950 overflow-hidden aspect-[4/5]">
+            <div key={result.title} className="group relative bg-background overflow-hidden aspect-[4/5]">
               <div className="absolute inset-0 opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 scale-100 group-hover:scale-110">
-                <Image 
+                <Image
                   src={result.img}
                   alt={result.title}
                   fill
@@ -53,7 +53,7 @@ export default function ResultsSection() {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-              
+
               <div className="absolute bottom-0 left-0 w-full p-10 space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="h-px w-8 bg-primary" />

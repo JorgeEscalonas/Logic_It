@@ -16,12 +16,12 @@ export default function FilteringSection() {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-border">
+    <section className="py-24 bg-white text-slate-950 border-y border-slate-200">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-headline font-semibold tracking-tighter uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              Para quién es Logicit
+            <h2 className="text-3xl font-headline font-semibold tracking-tighter uppercase tracking-[0.2em] text-slate-950 mb-4">
+              Para quién es Logic It
             </h2>
             <div className="h-px w-24 bg-primary mx-auto" />
           </div>
@@ -36,7 +36,7 @@ export default function FilteringSection() {
               </h3>
               <ul className="space-y-6">
                 {target.map(item => (
-                  <li key={item} className="text-lg font-medium border-l-2 border-primary pl-4 py-1">
+                  <li key={item} className="text-lg font-medium border-l-2 border-primary pl-4 py-1 text-slate-800">
                     {item}
                   </li>
                 ))}
@@ -52,16 +52,16 @@ export default function FilteringSection() {
               </h3>
               <ul className="space-y-6 opacity-60">
                 {skip.map(item => (
-                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-4 py-1 italic">
+                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-4 py-1 italic text-slate-500">
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          
-          <div className="mt-20 p-8 bg-slate-900 text-white text-center">
-            <p className="text-sm font-mono uppercase tracking-widest text-slate-400">
+
+          <div className="mt-20 p-8 bg-slate-50 border border-slate-100 text-center">
+            <p className="text-sm font-mono uppercase tracking-widest text-slate-500">
               Nuestro compromiso es con la excelencia técnica y el éxito del negocio a largo plazo.
             </p>
           </div>

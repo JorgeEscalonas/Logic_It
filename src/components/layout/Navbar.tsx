@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,30 +22,44 @@ export default function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6",
-      isScrolled ? "py-3 bg-background/95 backdrop-blur-md border-b" : "py-6 bg-transparent"
+      "fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out px-6",
+      isScrolled
+        ? "py-3 bg-background/40 backdrop-blur-xl shadow-[0_8px_32px_0_{rgba(0,0,0,0.36)}]"
+        : "py-6 bg-transparent"
     )}>
-      <div className="max-w-screen-2xl mx-auto flex justify-between items-center">
+      <div className={cn(
+        "absolute inset-x-0 bottom-0 h-[1px] bg-white/10 transition-opacity duration-700",
+        isScrolled ? "opacity-100" : "opacity-0"
+      )} />
+      <div className="max-w-screen-2xl mx-auto flex justify-between items-center relative z-10">
         <Link href="/" className="group flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center font-bold text-black text-sm transition-transform group-hover:rotate-90">L</div>
-          <span className="font-headline font-black text-2xl tracking-[-0.05em] uppercase">
-            Logicit<span className="text-primary">.</span>
-          </span>
+          <Image
+            src="/Logic_It.png"
+            alt="Logic It Logo"
+            width={120}
+            height={150}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
-        
+
         <div className="hidden md:flex gap-10 items-center">
           {navItems.map((item) => (
-            <Link 
-              key={item.label} 
-              href={item.href} 
-              className="text-[10px] font-mono uppercase tracking-[0.3em] hover:text-primary transition-colors"
+            <Link
+              key={item.label}
+              href={item.href}
+              className={cn(
+                "text-[10px] font-mono uppercase tracking-[0.3em] transition-colors hover:text-primary text-white"
+              )}
             >
               {item.label}
             </Link>
           ))}
-          <Link 
-            href="#contacto" 
-            className="px-6 py-2 bg-foreground text-background text-[10px] font-mono uppercase tracking-[0.3em] hover:bg-primary hover:text-foreground transition-all"
+          <Link
+            href="#contacto"
+            className={cn(
+              "px-6 py-2 text-[10px] font-mono uppercase tracking-[0.3em] transition-all bg-white text-black hover:bg-primary"
+            )}
           >
             Contacto
           </Link>

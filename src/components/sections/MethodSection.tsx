@@ -24,34 +24,34 @@ export default function MethodSection() {
   const items = Array.from({ length: 24 });
 
   return (
-    <section ref={sectionRef} id="metodo" className="relative min-h-[250vh] bg-slate-950 text-white">
+    <section ref={sectionRef} id="metodo" className="relative min-h-[250vh] bg-background text-white">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
-        
+
         <div className="text-center mb-16 max-w-3xl z-20">
           <div className="inline-block px-4 py-1 border border-primary text-primary text-[10px] font-mono uppercase tracking-[0.3em] mb-8">
             Filosofía de Construcción
           </div>
           <h2 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none uppercase">
-            Orden <br /> 
+            Orden <br />
             <span className="text-primary italic">Desde el Caos</span>
           </h2>
         </div>
 
-        <div className="relative w-full max-w-6xl aspect-[21/9] border border-white/5 bg-slate-900/50 backdrop-blur-sm p-8 overflow-hidden">
+        <div className="relative w-full max-w-6xl aspect-[21/9] border border-white/5 bg-slate-950 backdrop-blur-sm p-8 overflow-hidden">
           <div className="absolute inset-0 blueprint-grid-small opacity-10" />
-          
+
           <div className="relative w-full h-full">
             {isMounted && items.map((_, i) => {
               const rows = 3;
               const cols = 8;
               const row = Math.floor(i / cols);
               const col = i % cols;
-              
+
               // We use pre-calculated deterministic pseudo-random values to avoid hydration issues
               // even if isMounted is true, keeping calculations consistent.
               const chaosX = (Math.sin(i * 123) * 60) + 50;
-              const chaosY = (Math.cos(i * 456) * 60) + 50; 
+              const chaosY = (Math.cos(i * 456) * 60) + 50;
               const chaosRotate = Math.sin(i) * 180;
 
               const orderX = 10 + (col * (80 / (cols - 1)));
@@ -59,7 +59,7 @@ export default function MethodSection() {
               const orderRotate = 0;
 
               const t = Math.max(0, Math.min(1, (scrollProgress - 0.1) * 1.5));
-              
+
               const currentX = chaosX + (orderX - chaosX) * t;
               const currentY = chaosY + (orderY - chaosY) * t;
               const currentRotate = chaosRotate + (orderRotate - chaosRotate) * t;
@@ -79,7 +79,7 @@ export default function MethodSection() {
                   <div className="text-[8px] font-mono opacity-20">{i.toString(16).padStart(2, '0')}</div>
                   {t > 0.9 && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                       <div className="w-1 h-1 bg-primary rounded-full animate-ping" />
+                      <div className="w-1 h-1 bg-primary rounded-full animate-ping" />
                     </div>
                   )}
                 </div>
