@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center relative z-10">
         <Link href="/" className="group flex items-center gap-2">
           <Image
-            src="/Logic_It.png"
+            src="/icon.png"
             alt="Logic It Logo"
             width={120}
             height={150}
