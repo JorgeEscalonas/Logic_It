@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import ContactModal from "@/components/ContactModal";
 
 export default function HeroSection() {
   return (
@@ -24,7 +25,7 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-6xl md:text-[120px] font-headline font-black leading-[0.85] tracking-[-0.07em] uppercase">
-            Ingeniería <br />
+            Solución <br />
             <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>Digital</span> <br />
             <span className="text-primary">Real.</span>
           </h1>
@@ -36,12 +37,14 @@ export default function HeroSection() {
 
             <div className="flex flex-col justify-end gap-6">
               <div className="flex gap-4">
-                <Button asChild size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer">
-                  <Link href="#contacto">
-                    Iniciar Proyecto
-                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </Link>
-                </Button>
+                <ContactModal>
+                  <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer">
+                    <span className="flex items-center">
+                      Iniciar Proyecto
+                      <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </span>
+                  </Button>
+                </ContactModal>
                 <Button asChild variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-[0_8px_32px_0_{rgba(0,0,0,0.36)}] cursor-pointer">
                   <Link href="#sistemas">
                     Explorar
@@ -68,7 +71,7 @@ export default function HeroSection() {
           ))}
         </div>
         <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-4">
-          <span>Logicit Systems v24.5</span>
+          <span>Logic It Systems v24.5</span>
           <div className="w-20 h-px bg-white/20" />
           <span>Status: Stable</span>
         </div>

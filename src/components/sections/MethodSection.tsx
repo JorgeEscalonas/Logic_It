@@ -24,7 +24,7 @@ export default function MethodSection() {
   const items = Array.from({ length: 24 });
 
   return (
-    <section ref={sectionRef} id="metodo" className="relative min-h-[250vh] bg-background text-white">
+    <section ref={sectionRef} id="metodo" className="relative min-h-[350vh] bg-background text-white">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 blueprint-grid opacity-5 pointer-events-none" />
 
@@ -58,7 +58,7 @@ export default function MethodSection() {
               const orderY = 15 + (row * (70 / (rows - 1)));
               const orderRotate = 0;
 
-              const t = Math.max(0, Math.min(1, (scrollProgress - 0.1) * 1.5));
+              const t = Math.max(0, Math.min(1, (scrollProgress - 0.2) * 2.0));
 
               const currentX = chaosX + (orderX - chaosX) * t;
               const currentY = chaosY + (orderY - chaosY) * t;
@@ -88,13 +88,13 @@ export default function MethodSection() {
           </div>
 
           {/* Impact Text */}
-          <div className={`absolute bottom-8 left-8 transition-all duration-700 ${scrollProgress > 0.6 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`absolute bottom-8 left-8 transition-all duration-700 ${scrollProgress > 0.55 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <p className="text-4xl font-black uppercase italic tracking-tighter">Modularidad Extrema.</p>
             <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-2">Sistemas diseñados para la redundancia y el escalamiento horizontal.</p>
           </div>
         </div>
 
-        <div className="mt-16 text-center opacity-30 font-mono text-[10px] uppercase tracking-[1em] animate-pulse">
+        <div className={`mt-16 text-center transition-opacity duration-500 font-mono text-[10px] uppercase tracking-[1em] animate-pulse ${scrollProgress > 0.4 ? 'opacity-0' : 'opacity-30'}`}>
           Desciende para alinear el sistema
         </div>
       </div>

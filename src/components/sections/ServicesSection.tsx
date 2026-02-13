@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function ServicesSection() {
   const services = [
-    { title: "Apps Web de Alto Tráfico", desc: "Sistemas distribuidos que procesan millones de peticiones." },
-    { title: "Ecosistemas Móviles", desc: "Experiencias nativas y fluidas centradas en el usuario." },
-    { title: "Automatización Core", desc: "Reducción de fricción mediante lógica de procesos pura." },
-    { title: "Arquitectura Cloud", desc: "Infraestructura que escala automáticamente con el negocio." },
+    { title: "Desarrollo Web a Medida", desc: "Plataformas robustas diseñadas para crecer con tu empresa." },
+    { title: "Aplicaciones Móviles (Apps)", desc: "Tu negocio en el bolsillo de tus clientes. Rápido y efectivo." },
+    { title: "Automatización de Procesos", desc: "Elimina tareas repetitivas y ahorra horas de trabajo manual." },
+    { title: "Infraestructura en la Nube", desc: "Servidores seguros y potentes que nunca te dejan colgado." },
   ];
 
   return (
