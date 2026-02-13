@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import ContactModal from "@/components/ContactModal";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,14 +56,15 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="#contacto"
-            className={cn(
-              "px-6 py-2 text-[10px] font-mono uppercase tracking-[0.3em] transition-all bg-white text-black hover:bg-primary"
-            )}
-          >
-            Contacto
-          </Link>
+          <ContactModal>
+            <button
+              className={cn(
+                "px-6 py-2 text-[10px] font-mono uppercase tracking-[0.3em] transition-all bg-white text-black hover:bg-primary cursor-pointer"
+              )}
+            >
+              Contacto
+            </button>
+          </ContactModal>
         </div>
       </div>
     </nav>

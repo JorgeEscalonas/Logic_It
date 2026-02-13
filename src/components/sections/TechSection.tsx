@@ -37,7 +37,7 @@ Content-Type: application/json
   return (
     <section className="py-24 bg-background text-white relative overflow-hidden">
       <div className="absolute inset-0 blueprint-grid opacity-5" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
@@ -48,7 +48,7 @@ Content-Type: application/json
             <p className="text-lg text-slate-400 leading-relaxed max-w-lg">
               No listamos logotipos de tecnologías. Demostramos dominio técnico mediante la implementación de soluciones robustas, seguras y mantenibles.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-slate-800">
               <div>
                 <p className="text-3xl font-headline font-bold text-primary mb-2">99.9%</p>
@@ -72,7 +72,7 @@ Content-Type: application/json
                 <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">system_terminal.exe</span>
               </div>
             </div>
-            
+
             <Tabs defaultValue="frontend" className="w-full">
               <div className="px-4 pt-2">
                 <TabsList className="bg-transparent border-none gap-4">
@@ -81,7 +81,7 @@ Content-Type: application/json
                   <TabsTrigger value="api" className="data-[state=active]:bg-primary data-[state=active]:text-white rounded-none border border-slate-800 px-4 text-[10px] font-mono uppercase tracking-widest">REST API</TabsTrigger>
                 </TabsList>
               </div>
-              
+
               <div className="p-6">
                 <TabsContent value="frontend" className="m-0">
                   <pre className="text-sm font-mono text-slate-300 overflow-x-auto">
