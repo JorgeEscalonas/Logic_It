@@ -21,22 +21,23 @@ export default function FilteringSection() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-headline font-semibold tracking-tighter uppercase tracking-[0.2em] text-slate-950 mb-4">
-              Para quién es Logic It
+              Perfil Corporativo Objetivo
             </h2>
             <div className="h-px w-24 bg-primary mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-16">
             <div className="space-y-8">
-              <h3 className="text-xl font-bold flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                  <Check className="w-4 h-4" />
-                </span>
-                Trabajamos con:
+              <h3 className="font-bold flex items-center gap-2 font-mono uppercase text-xs tracking-widest text-primary">
+                Alineación Estratégica
               </h3>
               <ul className="space-y-6">
-                {target.map(item => (
-                  <li key={item} className="text-lg font-medium border-l-2 border-primary pl-4 py-1 text-slate-800">
+                {[
+                  "Corporaciones & Scale-ups",
+                  "Operaciones de Alta Complejidad",
+                  "Entornos de Misión Crítica"
+                ].map(item => (
+                  <li key={item} className="text-xl font-bold border-l-4 border-primary pl-6 py-2 text-slate-900 shadow-sm bg-slate-50">
                     {item}
                   </li>
                 ))}
@@ -44,15 +45,16 @@ export default function FilteringSection() {
             </div>
 
             <div className="space-y-8">
-              <h3 className="text-xl font-bold flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center">
-                  <X className="w-4 h-4" />
-                </span>
-                No trabajamos con:
+              <h3 className="font-bold flex items-center gap-2 font-mono uppercase text-xs tracking-widest text-slate-400">
+                Fuera de Scope
               </h3>
               <ul className="space-y-6 opacity-60">
-                {skip.map(item => (
-                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-4 py-1 italic text-slate-500">
+                {[
+                  "Proyectos MVP Desechables",
+                  "Desarrollo Low-Code/No-Code",
+                  "Mantenimiento Legacy sin Refactor"
+                ].map(item => (
+                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-6 py-1 italic text-slate-500">
                     {item}
                   </li>
                 ))}

@@ -62,7 +62,7 @@ export default function Navbar() {
                 "px-6 py-2 text-[10px] font-mono uppercase tracking-[0.3em] transition-all bg-white text-black hover:bg-primary cursor-pointer"
               )}
             >
-              Contacto
+              Agendar Auditoría
             </button>
           </ContactModal>
         </div>

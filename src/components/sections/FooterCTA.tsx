@@ -19,36 +19,48 @@ export default function FooterCTA() {
         </div>
 
         <ContactModal>
-          <Button size="lg" className="h-16 px-12 text-lg font-medium rounded-none bg-primary hover:bg-white hover:text-primary transition-all shadow-2xl">
-            CONTACTANOS
+          <Button size="lg" className="h-16 px-12 text-lg font-mono font-medium rounded-none bg-primary text-black hover:bg-white hover:text-primary transition-all shadow-[0_0_40px_-10px_rgba(var(--primary-rgb),0.3)] tracking-widest uppercase">
+            Agendar Auditoría Técnica
           </Button>
         </ContactModal>
 
-        <div className="pt-24 grid md:grid-cols-3 gap-12 border-t border-slate-900 mt-24">
-          <div className="text-left space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Sede Central</h4>
-            <p className="text-sm text-slate-500 font-light leading-relaxed">
-              Logic It Systems C.A.<br />
-              Tech District Center<br />
-              Global Operations
+        <div className="pt-24 grid md:grid-cols-4 gap-12 border-t border-slate-900 mt-24 text-left">
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Corporativo</h4>
+            <p className="text-sm text-slate-400 font-light leading-relaxed">
+              <strong className="text-white font-medium">Logic It Systems C.A.</strong><br />
+              Tech District Center, Piso 4<br />
+              Global Operations HQ<br />
+              RIF: J-50493821-2
             </p>
           </div>
 
-          <div className="text-left md:text-center space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Conecta</h4>
-            <div className="flex md:justify-center gap-6">
-              <a href="https://www.instagram.com/logicit_" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-white transition-colors">Instagram</a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-white transition-colors">Tiktok</a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-white transition-colors">Contacto</a>
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Contacto</h4>
+            <ul className="space-y-2 text-sm text-slate-400">
+              <li><a href="mailto:enterprise@logicit.com" className="hover:text-primary transition-colors">enterprise@logicit.com</a></li>
+              <li><span className="opacity-50">+58 (212) 555-0199</span></li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Social</h4>
+            <div className="flex flex-col gap-2">
+              <a href="https://www.instagram.com/logicit_" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-white transition-colors">Instagram / Engineering</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-500 hover:text-white transition-colors">LinkedIn / Corporate</a>
             </div>
           </div>
 
-          <div className="text-left md:text-right space-y-4">
+          <div className="space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-[0.3em] text-primary">Legal</h4>
-            <p className="text-xs text-slate-600 font-light leading-relaxed">
-              © 2024 Logic It. Todos los derechos reservados.<br />
-              Sistemas Diseñados, No Decorados.
-            </p>
+            <div className="flex flex-col gap-2 text-sm text-slate-500">
+              <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
+              <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
+              <a href="#" className="hover:text-white transition-colors">SLA & Garantías</a>
+              <p className="pt-4 text-xs opacity-40">
+                © 2024 Logic It Systems.<br />Todos los derechos reservados.
+              </p>
+            </div>
           </div>
         </div>
       </div>

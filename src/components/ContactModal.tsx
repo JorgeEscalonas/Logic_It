@@ -69,74 +69,74 @@ export default function ContactModal({ children }: ContactModalProps) {
                 <div className="p-8 md:p-10 relative z-10 space-y-6">
                     <DialogHeader className="space-y-4 text-left">
                         <DialogTitle className="text-3xl font-headline font-black uppercase tracking-tighter leading-none">
-                            Iniciar <span className="text-primary">Proyecto</span>
+                            Solicitud de <span className="text-primary">Auditoría</span>
                         </DialogTitle>
                         <DialogDescription className="text-slate-400 font-light text-base">
-                            Completa tus datos. Te contactaremos en menos de 24 horas.
+                            Proporcione sus credenciales. Un arquitecto de soluciones procesará su requerimiento.
                         </DialogDescription>
                     </DialogHeader>
 
                     {isSuccess ? (
                         <div className="flex flex-col items-center justify-center py-12 space-y-4 text-center animate-in fade-in zoom-in duration-500">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 border border-primary/20">
                                 <Check className="w-8 h-8 text-primary" />
                             </div>
-                            <h3 className="text-2xl font-bold font-headline uppercase">¡Mensaje Recibido!</h3>
-                            <p className="text-slate-400 max-w-xs">
-                                Hemos recibido tus coordenadas. Un especialista de Logic_It te contactará en breve.
+                            <h3 className="text-2xl font-bold font-headline uppercase tracking-tight">Solicitud Procesada</h3>
+                            <p className="text-slate-400 max-w-xs font-light text-sm">
+                                Requerimiento ingresado al sistema. Nuestro equipo de ingeniería analizará su caso en breve.
                             </p>
                             <Button
-                                className="mt-6 rounded-none bg-white text-black hover:bg-slate-200"
+                                className="mt-8 rounded-none bg-white/10 text-white hover:bg-white/20 border border-white/10 w-full font-mono uppercase tracking-widest text-xs"
                                 onClick={() => setIsSuccess(false)}
                             >
-                                Entendido
+                                Cerrar Terminal
                             </Button>
                         </div>
                     ) : (
-                        <form className="space-y-6 mt-4" onSubmit={handleSubmit}>
+                        <form className="space-y-6 mt-8" onSubmit={handleSubmit}>
                             <div className="space-y-5">
                                 <div className="space-y-2">
-                                    <Label htmlFor="name" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Nombre Completo</Label>
+                                    <Label htmlFor="name" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Nombre del Responsable</Label>
                                     <Input
                                         id="name"
                                         name="name"
-                                        placeholder="Tu nombre"
-                                        className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-11"
+                                        placeholder="Ingrese nombre completo"
+                                        className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-12 font-mono text-sm"
                                         required
                                         disabled={isSubmitting}
                                     />
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="email" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Email</Label>
+                                        <Label htmlFor="email" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Email Corporativo</Label>
                                         <Input
                                             id="email"
                                             name="email"
                                             type="email"
-                                            placeholder="tu@email.com"
-                                            className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-11"
+                                            placeholder="nombre@empresa.com"
+                                            className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-12 font-mono text-sm"
                                             required
                                             disabled={isSubmitting}
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="company" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Empresa</Label>
+                                        <Label htmlFor="company" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Organización</Label>
                                         <Input
                                             id="company"
                                             name="company"
-                                            placeholder="Nombre de tu empresa"
-                                            className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-11"
+                                            placeholder="Nombre de la entidad"
+                                            className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 h-12 font-mono text-sm"
                                             disabled={isSubmitting}
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="message" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Mensaje</Label>
+                                    <Label htmlFor="message" className="text-[10px] uppercase tracking-widest font-mono text-primary/80">Detalles Técnicos</Label>
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Cuéntanos brevemente qué necesitas..."
-                                        className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 min-h-[100px] resize-none"
+                                        placeholder="Describa brevemente los requerimientos del sistema..."
+                                        className="rounded-none bg-white/5 border-white/10 focus-visible:ring-0 focus-visible:border-primary text-white placeholder:text-white/20 min-h-[120px] resize-none font-mono text-sm"
                                         required
                                         disabled={isSubmitting}
                                     />
@@ -145,15 +145,15 @@ export default function ContactModal({ children }: ContactModalProps) {
 
                             <Button
                                 type="submit"
-                                className="w-full h-14 rounded-none bg-primary text-slate-950 hover:bg-white font-mono uppercase tracking-widest text-xs font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full h-14 rounded-none bg-primary text-slate-950 hover:bg-white font-mono uppercase tracking-widest text-xs font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_-5px_rgba(var(--primary-rgb),0.5)]"
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? (
                                     <span className="flex items-center gap-2">
                                         <Loader2 className="w-4 h-4 animate-spin" />
-                                        Transmitiendo...
+                                        Iniciando Handshake...
                                     </span>
-                                ) : "Enviar Mensaje"}
+                                ) : "Inicializar Protocolo"}
                             </Button>
                         </form>
                     )}

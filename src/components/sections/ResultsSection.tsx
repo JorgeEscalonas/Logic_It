@@ -31,12 +31,12 @@ export default function ResultsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
           <div className="max-w-3xl space-y-6">
             <h2 className="text-4xl md:text-8xl font-headline font-black tracking-tighter leading-[0.9] uppercase">
-              Impacto <br />
-              <span className="text-primary italic">Tangible</span>
+              Validación de <br />
+              <span className="text-primary italic">Resultados</span>
             </h2>
           </div>
           <div className="text-right font-mono text-xs text-slate-500 uppercase tracking-[0.5em]">
-            Case_Studies_v24
+            DEPLOYED_SYSTEMS__LOG_2024
           </div>
         </div>
 

@@ -38,16 +38,16 @@ export default function HeroSection() {
             <div className="flex flex-col justify-end gap-6">
               <div className="flex gap-4">
                 <ContactModal>
-                  <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer">
+                  <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer shadow-[0_0_20px_-5px_rgba(var(--primary-rgb),0.4)]">
                     <span className="flex items-center">
-                      Iniciar Proyecto
+                      Agendar Auditoría Técnica
                       <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
                   </Button>
                 </ContactModal>
                 <Button asChild variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-[0_8px_32px_0_{rgba(0,0,0,0.36)}] cursor-pointer">
                   <Link href="#sistemas">
-                    Explorar
+                    Ver Soluciones
                   </Link>
                 </Button>
               </div>
