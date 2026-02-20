@@ -55,11 +55,11 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-24 grid md:grid-cols-3 gap-12 opacity-40">
+        <div className="mt-24 flex flex-row flex-wrap items-center gap-x-8 gap-y-6 md:grid md:grid-cols-3 md:gap-12 opacity-40">
           {["Microservices", "Serverless", "Event-Driven"].map(tag => (
-            <div key={tag} className="flex items-center gap-4">
+            <div key={tag} className="flex items-center gap-3 md:gap-4">
               <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.5em]">{tag}</span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.5em]">{tag}</span>
             </div>
           ))}
         </div>

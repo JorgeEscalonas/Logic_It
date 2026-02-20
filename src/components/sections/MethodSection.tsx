@@ -88,10 +88,11 @@ export default function MethodSection() {
           </div>
 
           {/* Impact Text */}
-          <div className={`absolute bottom-8 left-8 transition-all duration-700 ${scrollProgress > 0.55 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <p className="text-4xl font-black uppercase italic tracking-tighter">Modularidad Extrema.</p>
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-2">Sistemas diseñados para la redundancia y el escalamiento horizontal.</p>
-          </div>
+          <div className={`absolute bottom-4 left-4 md:bottom-8 md:left-8 transition-all duration-700 ${scrollProgress > 0.55 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className="text-xl md:text-4xl font-black uppercase italic tracking-tighter leading-none">Modularidad Extrema.</p>
+            <p className="text-[8px] md:text-xs font-mono text-slate-500 uppercase tracking-wider sm:tracking-widest mt-1 md:mt-2 max-w-[280px] md:max-w-none">
+              Sistemas diseñados para la redundancia y el escalamiento horizontal.
+            </p>          </div>
         </div>
 
         <div className={`mt-16 text-center transition-opacity duration-500 font-mono text-[10px] uppercase tracking-[1em] animate-pulse ${scrollProgress > 0.4 ? 'opacity-0' : 'opacity-30'}`}>

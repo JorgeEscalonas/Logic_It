@@ -19,33 +19,33 @@ export default function HeroSection() {
         <div className="max-w-5xl space-y-10">
           <div className="inline-flex items-center gap-4 px-4 py-1.5 border border-primary/30 bg-primary/5 backdrop-blur-sm">
             <div className="w-2 h-2 bg-primary animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-primary-foreground/80">
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] sm:tracking-[0.4em] text-primary-foreground/80">
               Sistemas que escalan sin límites
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-[120px] font-headline font-black leading-[0.85] tracking-[-0.07em] uppercase">
+          <h1 className="text-6xl sm:text-7xl md:text-[120px] font-headline font-black leading-[0.85] tracking-[-0.07em] uppercase">
             Solución <br />
             <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>Digital</span> <br />
             <span className="text-primary">Real.</span>
           </h1>
 
           <div className="grid md:grid-cols-2 gap-12 pt-8">
-            <p className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed">
+            <p className="text-lg md:text-2xl text-slate-400 font-light leading-relaxed">
               No creamos software común. Construimos arquitecturas robustas que transforman la lógica de negocio en activos digitales de alto rendimiento.
             </p>
 
             <div className="flex flex-col justify-end gap-6">
-              <div className="flex gap-4">
+              <div className="flex flex-row gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
                 <ContactModal>
-                  <Button size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer shadow-[0_0_20px_-5px_rgba(var(--primary-rgb),0.4)]">
-                    <span className="flex items-center">
-                      Agendar Auditoría Técnica
-                      <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <Button size="lg" className="h-14 sm:h-16 px-4 sm:px-10 text-[10px] sm:text-sm font-mono uppercase tracking-widest rounded-none bg-primary text-slate-950 hover:bg-white transition-all group cursor-pointer shadow-[0_0_20px_-5px_rgba(var(--primary-rgb),0.4)] whitespace-nowrap flex-1 sm:flex-none">
+                    <span className="flex items-center justify-center">
+                      Agendar Auditoría
+                      <ArrowUpRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
                   </Button>
                 </ContactModal>
-                <Button asChild variant="outline" size="lg" className="h-16 px-10 text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-[0_8px_32px_0_{rgba(0,0,0,0.36)}] cursor-pointer">
+                <Button asChild variant="outline" size="lg" className="h-14 sm:h-16 px-4 sm:px-10 text-[10px] sm:text-sm font-mono uppercase tracking-widest rounded-none border-white/20 hover:bg-white/10 hover:backdrop-blur-xl hover:shadow-[0_8px_32px_0_{rgba(0,0,0,0.36)}] cursor-pointer whitespace-nowrap flex-1 sm:flex-none">
                   <Link href="#sistemas">
                     Ver Soluciones
                   </Link>
@@ -57,8 +57,8 @@ export default function HeroSection() {
       </div>
 
       {/* Technical Footer */}
-      <div className="absolute bottom-12 left-6 right-6 flex flex-col md:flex-row justify-between items-end gap-4 border-t border-white/10 pt-6">
-        <div className="flex gap-12">
+      <div className="absolute bottom-6 md:bottom-12 left-6 right-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-4 border-t border-white/10 pt-6">
+        <div className="flex flex-wrap gap-8 md:gap-12">
           {[
             { label: "LATENCY", value: "<12ms" },
             { label: "UPTIME", value: "99.99%" },
@@ -70,9 +70,9 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
-        <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-4">
+        <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
           <span>Logic It Systems v24.5</span>
-          <div className="w-20 h-px bg-white/20" />
+          <div className="hidden sm:block w-20 h-px bg-white/20" />
           <span>Status: Stable</span>
         </div>
       </div>
