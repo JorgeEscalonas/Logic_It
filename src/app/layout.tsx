@@ -133,7 +133,7 @@ export default function RootLayout({
               },
               sameAs: [
                 'https://www.instagram.com/logicit_',
-                'https://www.linkedin.com/company/logicit'
+                'https://www.tiktok.com/@logic_it'
               ]
             })
           }}

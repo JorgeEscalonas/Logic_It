@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Logic It Systems | Enterprise Software Architecture',
+        name: 'Logic It Systems | Software Architecture',
         short_name: 'Logic It',
         description: 'Consultora de ingeniería de software para sistemas enterprise de misión crítica.',
         start_url: '/',

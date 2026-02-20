@@ -4,15 +4,15 @@ import { Check, X } from "lucide-react";
 
 export default function FilteringSection() {
   const target = [
-    "Empresas en crecimiento",
-    "Negocios con procesos complejos",
-    "Equipos que necesitan control y escalabilidad"
+    "Empresas en etapa de expansión y corporaciones",
+    "Negocios con procesos operativos de alta complejidad",
+    "Equipos que buscan escalabilidad y control técnico total"
   ];
 
   const skip = [
-    "Proyectos improvisados",
-    "Soluciones rápidas sin visión",
-    "Software sin arquitectura"
+    "Proyectos de desarrollo rápido o prototipos temporales",
+    "Soluciones genéricas sin una visión estratégica",
+    "Mantenimiento de código heredado sin reestructuración"
   ];
 
   return (
@@ -32,12 +32,9 @@ export default function FilteringSection() {
                 Alineación Estratégica
               </h3>
               <ul className="space-y-6">
-                {[
-                  "Corporaciones & Scale-ups",
-                  "Operaciones de Alta Complejidad",
-                  "Entornos de Misión Crítica"
-                ].map(item => (
-                  <li key={item} className="text-xl font-bold border-l-4 border-primary pl-6 py-2 text-slate-900 shadow-sm bg-slate-50">
+                {target.map(item => (
+                  <li key={item} className="text-xl font-bold border-l-4 border-primary pl-6 py-2 text-slate-900 shadow-sm bg-slate-50 flex items-center gap-3">
+                    <Check className="w-5 h-5 text-primary shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -49,12 +46,9 @@ export default function FilteringSection() {
                 Fuera de Scope
               </h3>
               <ul className="space-y-6 opacity-60">
-                {[
-                  "Proyectos MVP Desechables",
-                  "Desarrollo Low-Code/No-Code",
-                  "Mantenimiento Legacy sin Refactor"
-                ].map(item => (
-                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-6 py-1 italic text-slate-500">
+                {skip.map(item => (
+                  <li key={item} className="text-lg font-medium border-l-2 border-slate-200 pl-6 py-1 italic text-slate-500 flex items-center gap-3">
+                    <X className="w-4 h-4 text-slate-400 shrink-0" />
                     {item}
                   </li>
                 ))}
